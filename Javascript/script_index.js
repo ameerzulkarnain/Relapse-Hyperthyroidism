@@ -1,23 +1,78 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function() {
 
-	jQuery(".scroll-container").hide();
+    // when the user scrolling the page this function will triggered
+    jQuery(window).scroll(function() {
 
-	// when the user scrolling the page this function will triggered
-	jQuery(window).scroll(function(){
+        var scrollPos = jQuery(window).scrollTop();
 
-		var scrollPos = jQuery(window).scrollTop();
+        if (scrollPos > 20) {
 
-		if (scrollPos > 20) {
+            jQuery(".scroll-container").show(300);
 
-			jQuery(".scroll-container").show(150);
+            // add animated to pda-title
 
-		}else{
+            $(".pda-title").addClass("wobble animated");
 
-			jQuery(".scroll-container").hide(150);
+        } else {
 
-		}
+            jQuery(".scroll-container").hide(300);
 
-	})
-	
+        }
+
+    })
+
+    // make the cards (div) clickables
+
+    $(".card-style").click(function() {
+
+        window.location = $(this).find("a").attr("href");
+
+        return false;
+    });
+
+
+    // make hide button clickables
+    // for get to know button 
+    $(".scroll-box1").click(function() {
+
+        window.location.href = "html/gettoknow.html";
+    });
+
+    $(".scroll-box2").click(function() {
+
+        window.location.href = "html/treatmentOption.html";
+    });
+
+    $(".scroll-box3").click(function() {
+
+        window.location.href = "html/comparison.html";
+    });
+
+    $(".scroll-box4").click(function() {
+
+        window.location.href = "html/decisions.html";
+    });
+
+    $(".manual-button").click(function() {
+
+        window.location.href = "html/gettoknow.html";
+    });
+
+    $(".manual-card1").click(function() {
+        window.location.href = "html/gettoknow.html";    
+    });
+
+    $(".manual-card2").click(function() {
+        window.location.href = "html/treatmentOption.html";    
+    });
+
+    $(".manual-card3").click(function() {
+        window.location.href = "html/comparison.html";    
+    });
+    
+    $(".manual-card4").click(function() {
+        window.location.href = "html/decisions.html";    
+    }); 
+
 
 })
